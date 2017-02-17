@@ -1,0 +1,24 @@
+{
+  "name": "grafos",
+  "authors": [
+    "Matheus <mathe_oare@hotmail.com>"
+  ],
+  "description": "grafos estrutra dados ifce",
+  "main": "index.html",
+  "keywords": [
+    "grafos",
+    "estrutura",
+    "dados",
+    "ifce"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
