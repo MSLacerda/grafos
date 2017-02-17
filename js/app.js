@@ -21,7 +21,7 @@ $(document).ready(function () {
     nodes++;
     a++;
     sys.addNode(String.fromCharCode(a-1));
-    vetor.push({id: String.fromCharCode(a)});
+    vetor.push({id: String.fromCharCode(a-1), list:[]});
     console.log(vetor);
   }
   //---------------------------------------------
@@ -33,7 +33,7 @@ $(document).ready(function () {
     a = 65;
     for(i = 0;i < nodes; i++){
       sys.addNode(String.fromCharCode(a));
-      vetor.push({id: String.fromCharCode(a)});
+      vetor.push({id: String.fromCharCode(a), list:[]});
       a++;
     }
     console.log(vetor);
@@ -43,13 +43,15 @@ $(document).ready(function () {
 
   //Função para limpar o grafo---------------------
   var deleteGrafo = function () {
-    console.log(nodes);
-    a = 65;
+    console.log(nodes+ ' '+ a);
+    a = 65; 
     for(i = 0; i < nodes; i++){
       sys.pruneNode(String.fromCharCode(a));
+      vetor.shift();
       a++;
     }
     nodes = 0;
+    
     $('#btnA').prop("disabled",false);
     $('#qtdNo').prop("disabled", false);
     $('#qtdNo').val('');
@@ -65,7 +67,7 @@ $(document).ready(function () {
     sys.addEdge(x, y,{name: peso});
     for (i=0;i<nodes;i++){
       if(vetor[i].id==x){
-        vetor[i].list.push({adj:y, peso:peso});
+        vetor[i].list.push({_aresta:{adj:y, peso:peso}});
         console.log(vetor[i]);
       }
     }
